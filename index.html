@@ -3,29 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">   
     <link rel="stylesheet" href="css/style.css">
-    <title>SM-App || A school Management application that keep track of students and staff records and/title>
+    <title>SMapp Schools || A schoool Management application for keeping track of its student and staff records and activities</title>
 </head>
 <body>
     <!--Navigation bar-->
     <div class="navbar">
-        <div class="container flex">
+        <div class="container">
             <h1 class="logo">SMapp Schools</h1> 
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Student</a></li>
-                    <li><a href="@">Staff</a></li>
+                    <li><a href="html/student.html">Student</a></li>
+                    <li><a href="html/staff.html">Staff</a></li>
                 </ul>
             </nav> 
         </div>
     </div>
+    <!--About school-->
     <div class="about">
         <h1>About SMapp Schools</h1>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum perspiciatis nisi similique at doloremque! Eos, praesentium! Ea voluptas doloremque inventore ut. Illum quos sequi, itaque, ratione magni reiciendis explicabo saepe at, sint nesciunt aperiam neque vel. Delectus, quod unde! Repellat, itaque corporis recusandae sit magni ipsum sequi voluptatem! Illum, rerum.</p>
     </div>
-    
+    <!--Polling school data-->
+    <div class="sdata">
+        <div class="getInf">
+            <h3>Get staff or student information</h3>
+            <label for="getInfo">Choose category</label>
+            <select name="getInfo" id="">                
+                <option value="#">---select--</option>
+                <option value="1">student</option>
+                <option value="2">staff</option>
+            </select></br>
+            <LAbel for="Rid">Enter ID</LAbel>
+            <input type="text" name="Rid" placeholder="Enter destination ID">
+            <input type="button" class="buttn" value="Get Info">
 
-    <script src="js/main.js"></script>
+        </div>
+        <div>some other text</div>
+    </div>
+
+
+
 </body>
 </html>

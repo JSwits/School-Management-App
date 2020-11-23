@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">   
+    <link rel="stylesheet" href="css/style.css">
+    <title></title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="container flex">
+            <h1 class="logo">SMapp Schools</h1> 
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Student</a></li>
+                    <li><a href="@">Staff</a></li>
+                </ul>
+            </nav> 
+        </div>
+    </div>
+    <div class="about">
+        <h1>About SMapp Schools</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum perspiciatis nisi similique at doloremque! Eos, praesentium! Ea voluptas doloremque inventore ut. Illum quos sequi, itaque, ratione magni reiciendis explicabo saepe at, sint nesciunt aperiam neque vel. Delectus, quod unde! Repellat, itaque corporis recusandae sit magni ipsum sequi voluptatem! Illum, rerum.</p>
+    </div>
+</body>
+</html>
