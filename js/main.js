@@ -3,7 +3,7 @@ let school = {
     Staff: []
     };
 let students = [
-    {
+     {
         sdid: this.sdid,
         name: this.name,
         gender: this.gender,
@@ -25,6 +25,7 @@ let staff = [
         salaryp: this.salaryp
     }
 ]
+const student=school.students
 fees=document.getElementById('tuitionfee').value
 //register new student
 function registerNew(){
@@ -43,18 +44,18 @@ function registerNew(){
         phone:sdphone.value,
         address: sdaddress.value,
         fees:sdfees.value,
-        feesp: payfees(sdfees)
+        feesp: feesp+=sdfees.value
     })       
     console.log(school)
-    console.log(students)
+    console.log(student)
     console.log(feesp)
 }
-console.log(school)
 
-function payfees(n){
-    let sli= document.getElementById('tuitionfee')
+
+function payfees(){
+    let sli= document.getElementById('tuitionfee').value
     let feespaid = 0
-    feespaid +=Number(sli.values)
+    feespaid +=(sli)
 }
 
 function studentID(){
@@ -70,4 +71,35 @@ function staffId(){
     for (var i=0; i<9; i++){
         id+=letters[Math.floor(Math.random()*16)];
     } return id;
+}
+//get student information
+function getSdInfo(){
+    let id=document.getElementById('sdid').value
+     let stu= school.students.filter( student => student.sdid == id);
+        if (school.students.filter(student => student.sdid == id)){
+            console.log(stu)
+           }else{console.log("NOT A VALID STUDENT-ID")}    
+}
+function modifySdInfo(){
+    let keys = JSON.stringify(document.getElementById('key').value)
+    let repl = document.getElementById('replace').value
+    let id=document.getElementById('sdid').value
+    let stu= school.students.filter( student => student.sdid == id);
+    if (school.students.filter(student => student.sdid == id)){
+      let index =findIndex(student)  ;
+      console.log(index)
+      student[index].keys=repl;         
+            }
+        
+        console.log(stu)
+        }
+function deleteSdAct(){
+    let id=document.getElementById('ddid').value
+    let stu= school.students.filter( student => student.sdid == id);
+    if (school.students.filter(student => student.sdid == id)){
+       //let student= school.getSdInfo(id);
+       let index= school.findIndex(stu);
+       stu.splice(index,1)
+    }
+    console.log(student)
 }

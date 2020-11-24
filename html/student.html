@@ -31,22 +31,27 @@
         <div class="getInf">
             <h3>Get Student information</h3>
             <LAbel for="Sdid">Enter ID</LAbel>
-            <input type="text" name="Sdid" placeholder="Enter Student ID">
-            <input type="button" class="buttn" value="Get Info">
+            <input type="text" name="Sdid" id="sdid" onfocus="" placeholder="Enter Student ID">
+            <input type="button" class="buttn" value="Get Info"  onclick="getSdInfo()">
+            <!--Register New student-->
             <div id="registerS">
                 <h3>Register New Student</h3>            
                 <label for="fname">First Name</label>
-                <input type="text" name="fname" id="sdname" placeholder="start with First-Name"></br>
+                <input type="text" name="fname" id="sdname" onfocus=""placeholder="start with First-Name"></br>
                 <label for="gender">Gender</label>
-                <input name="gender" id="sdgender"></br>
+                <select name="gender" id="sdgender">                
+                    <option value="#">---select--</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select></br>              
                 <label for="sdage">Age</label>
-                <input type="text" name="sdage" id="sdage" placeholder="DD/MM/YR"></br>
+                <input type="number" name="sdage" id="sdage" onfocus="" placeholder="In years"></br>
                 <label for="address">Address</label>
-                <input type="text" name="address" id="sdaddress" ></br>
+                <input type="text" name="address" onfocus="" id="sdaddress" ></br>
                 <label for="pnumber">Phone Number</label>
-                <input type="text" name="pnumber" id="sdphone"></br>
+                <input type="number" name="pnumber" onfocus="" id="sdphone"></br>
                 <label for="fees">Tuition Fee</label>
-                <input type="text" name="fee" id="tuitionfee"></br>
+                <input type="number" name="fee" onfocus="" id="tuitionfee"></br>
                 <label for="tpaid">Tuition Paid</label>
                 <select name="tpaid" id="tpaid">                
                     <option value="#">---select--</option>
@@ -57,7 +62,38 @@
                 <input type="button" class="buttn" value="Create Student Account" onclick="registerNew()">
             </div>
             <p id="studentID"></p>
+             <!--Modify student info-->
+        <div class="modsd">
+            <h3>Modify Student Infomation</h3>
+            <LAbel for="Sdid">Enter ID</LAbel>
+            <input type="text" name="Sdid" id="mdid" onfocus="" placeholder="Enter Student ID"></br>
+            <LAbel for="mdid">Field to modify</LAbel>
+            <input type="text" name="mdid" id="key" placeholder="name/gender/age/phone/address/fees"></br>
+            <!--<select name="mdid" id="key" >
+                <option value="#">----Select--</option>
+                <option value="name">Name</option>
+                <option value="gender">gender</option>
+                <option value="age">age</option>
+                <option value="phone">Phone Number</option>
+                <option value="address">Address</option>
+            </select></br>-->
+            <label for="replace">Replace with</label>
+            <input type="text" name="replace" id="replace"></br>
+            <input type="button" class="buttn" value="Modify Student Information" onclick="modifySdInfo()">
+            
+            
         </div>
+        <div class="modsd">
+            <h3>Delete Student Account</h3>
+            <LAbel for="ddid">Enter ID</LAbel>
+            <input type="text" name="ddid" id="ddid" onfocus="" placeholder="Enter Student ID"></br>
+            <input type="button" class="buttn" value="Delete Student Account" onclick="deleteSdAct()">           
+        </div>
+        
+
+        </div>
+       
+
         <div class="getInf">some other text</div>
     </div>
 
