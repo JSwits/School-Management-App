@@ -2,18 +2,20 @@ let school = {
     students: [],
     Staff: []
     };
+
 let students = [
     {
         sdid: this.sdid,
         name: this.name,
         gender: this.gender,
-        age: this.age,        
+        dob: this.dob,        
         phone: this.phone,
         address: this.address,
         fees: this.fees,
         feesp: this.feesp
     }
 ]
+
 let staff = [
     {
         name: this.name,
@@ -25,13 +27,15 @@ let staff = [
         salaryp: this.salaryp
     }
 ]
+
 fees=document.getElementById('tuitionfee').value
 //register new student
-function registerNew(){
+function registerStudent(){
     feesp=0;
     let sdname= document.getElementById('sdname');
     let sdgender = document.getElementById('sdgender')
-    let sdage = document.getElementById('sdage')
+    let sdob = document.getElementById('sdob')
+    //console.log(sdob);
     let sdphone = document.getElementById('sdphone')
     let sdaddress= document.getElementById('sdaddress')
     let sdfees = document.getElementById('tuitionfee')  
@@ -39,7 +43,7 @@ function registerNew(){
         sdid: studentID(),
         name: sdname.value,
         gender: sdgender.value,
-        age: sdage.value,
+        dob: sdob.value,
         phone:sdphone.value,
         address: sdaddress.value,
         fees:sdfees.value,
