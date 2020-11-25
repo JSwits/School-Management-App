@@ -4,6 +4,8 @@ let sfbutton = document.querySelector('.sfbutton');
 
 sfbutton.onclick = function EmployStaff () {
 
+    EmployStaff.preventDefault;
+
 let sffname = document.querySelector('.sffname').value;
 let sflname = document.querySelector('.sflname').value;
 let sfoname = document.querySelector('.sfoname').value;
@@ -12,7 +14,6 @@ let sfaddress = document.querySelector('.sfaddress').value;
 let sfpnumber = document.querySelector('.sfpnumber').value;
 let sffee = document.querySelector('.sffee').value;
 let sfpaid = document.getElementById('sfpaid').value;
-let sfbutton = document.querySelector('.sfbutton');
 
     staff.push({
         "first name" : sffname,
@@ -29,8 +30,19 @@ let sfbutton = document.querySelector('.sfbutton');
 
     console.log(staff);
 
+    //local storage starts here
+
+    // Put the staff array into storage
+    localStorage.setItem('staff', JSON.stringify(staff));
+
+    // Retrieve the array from storage
+    var retrievedArray = localStorage.getItem('staff');
+
+    console.log('retrievedArray: ', JSON.parse(retrievedArray));
+
+
 }
-console.log(staff);
+
 
 function staffId () {
     var letters = "0123456789GHIJKL";
@@ -39,6 +51,5 @@ function staffId () {
         id+=letters[Math.floor(Math.random()*16)];
     } return id;
 }
-
 
 
