@@ -126,8 +126,8 @@ function deleteSfAct(){
     let woos = school.staff;
     let stf= school.staff.find( staf => staf.dfid == sid);
         if (stf= school.staff.find( staf => staf.dfid == sid)){           
-       let index= woos.indexOf(stf);
-       woos.splice(index,1)
+       let sindex= woos.indexOf(stf);
+       woos.splice(sindex,1)
        console.log(school)
     }    
 }
