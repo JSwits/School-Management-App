@@ -2,19 +2,19 @@ let school = {
     students: [],
     Staff: []
     };
-let students = [
+    students : [
      {
         sdid: this.sdid,
         name: this.name,
         gender: this.gender,
-        age: this.age,        
+        dob: this.dob,        
         phone: this.phone,
         address: this.address,
         fees: this.fees,
         feesp: this.feesp
     }
 ]
-let staff = [
+    staff : [
     {
         name: this.name,
         sfid: this.stid,
@@ -26,6 +26,9 @@ let staff = [
     }
 ]
 const student=school.students
+let schoolIncome = 0;
+let schoolExpenditure = 0;
+let schoolBalnce = 0;
 fees=document.getElementById('tuitionfee').value
 //register new student
 function registerNew(){
@@ -40,27 +43,20 @@ function registerNew(){
         sdid: studentID(),
         name: sdname.value,
         gender: sdgender.value,
-        age: sdage.value,
+        dob: sdage.value,
         phone:sdphone.value,
         address: sdaddress.value,
         fees:sdfees.value,
-        feesp: feesp+=sdfees.value
+        feesp: feesp+=parseInt(sdfees.value)
     })       
     console.log(school)
     console.log(student)
     console.log(feesp)
 }
 
-
-function payfees(){
-    let sli= document.getElementById('tuitionfee').value
-    let feespaid = 0
-    feespaid +=(sli)
-}
-
 function studentID(){
     var letters = "0123456789ABCDEF";
-    var id = "SF"
+    var id = "SD"
     for (var i=0; i<9; i++){
         id+=letters[Math.floor(Math.random()*16)];
     } return id;
@@ -75,31 +71,39 @@ function staffId(){
 //get student information
 function getSdInfo(){
     let id=document.getElementById('sdid').value
-     let stu= school.students.filter( student => student.sdid == id);
-        if (school.students.filter(student => student.sdid == id)){
+     let stu= school.students.find( student => student.sdid == id);
+        if (school.students.find(student => student.sdid == id)){
             console.log(stu)
            }else{console.log("NOT A VALID STUDENT-ID")}    
 }
 function modifySdInfo(){
-    let keys = JSON.stringify(document.getElementById('key').value)
+    let keys = document.getElementById('key').value
     let repl = document.getElementById('replace').value
-    let id=document.getElementById('sdid').value
-    let stu= school.students.filter( student => student.sdid == id);
-    if (school.students.filter(student => student.sdid == id)){
-      let index =findIndex(student)  ;
-      console.log(index)
-      student[index].keys=repl;         
-            }
-        
-        console.log(stu)
-        }
+    let id=document.getElementById('mdid').value
+    let stu= school.students.find( student => student.sdid == id);
+        if (school.students.find(student => student.sdid == id)){
+           
+    stu[keys]=repl; 
+    console.log(stu)
+    //return(stu) 
+    
+      }
+   }
 function deleteSdAct(){
     let id=document.getElementById('ddid').value
-    let stu= school.students.filter( student => student.sdid == id);
-    if (school.students.filter(student => student.sdid == id)){
-       //let student= school.getSdInfo(id);
-       let index= school.findIndex(stu);
-       stu.splice(index,1)
-    }
-    console.log(student)
+    let woo = school.students;
+    let stu= school.students.find( student => student.sdid == id);
+        if (school.students.find(student => student.sdid == id)){              
+       let index= woo.indexOf(stu);
+       woo.splice(index,1)
+       console.log(school)
+    }    
 }
+
+function schoolBalance(){      
+    for (i=0; i< student.length; i++){
+        schoolIncome += parseInt(student[i].fees)
+    }    
+console.log(schoolIncome)
+}
+
