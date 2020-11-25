@@ -1,31 +1,9 @@
 let school = {
     students: [],
-    Staff: []
+    staff: []
     };
-    students : [
-     {
-        sdid: this.sdid,
-        name: this.name,
-        gender: this.gender,
-        dob: this.dob,        
-        phone: this.phone,
-        address: this.address,
-        fees: this.fees,
-        feesp: this.feesp
-    }
-]
-    staff : [
-    {
-        name: this.name,
-        sfid: this.stid,
-        gender: this.gender,
-        phone: this.phone,
-        address: this.address,
-        salary: this.salary,
-        salaryp: this.salaryp
-    }
-]
-const student=school.students
+    const student=school.students;
+    const staf=school.staff
 let schoolIncome = 0;
 let schoolExpenditure = 0;
 let schoolBalnce = 0;
@@ -49,9 +27,7 @@ function registerNew(){
         fees:sdfees.value,
         feesp: feesp+=parseInt(sdfees.value)
     })       
-    console.log(school)
-    console.log(student)
-    console.log(feesp)
+    console.log(student)    
 }
 
 function studentID(){
@@ -100,6 +76,71 @@ function deleteSdAct(){
     }    
 }
 
+//STAFF DASHBOARD
+function registerSNew(){
+    salaryp=0;
+    let sfname= document.getElementById('sfname');
+    let sfgender = document.getElementById('sfgender')
+    let sfage = document.getElementById('sfage')
+    let sfphone = document.getElementById('sfphone')
+    let sfaddress= document.getElementById('sfaddress')
+    let sfsal = document.getElementById('sal')  
+    staf.push({
+        stfid: staffId(),
+        sname: sfname.value,
+        sgender: sfgender.value,
+        sdob: sfage.value,
+        sphone:sfphone.value,
+        saddress: sfaddress.value,
+        salary:sfsal.value,
+        salaryp: salaryp+=parseInt(sfsal.value)
+    })       
+    console.log(staf)
+    //console.log(staf)
+    
+}
+
+//get staffinformation
+function getSfInfo(){
+    let sid=document.getElementById('sfid').value
+     let stf= school.staff.find( staf => staf.sfid == sid);
+        if (stf= school.staff.find( staf => staf.sfid == sid)){
+            console.log(stf)
+           }else{console.log("NOT A VALID STAFF-ID")}    
+}
+function modifySfInfo(){
+    let skeys = document.getElementById('skey').value
+    let srepl = document.getElementById('sreplace').value
+    let sid=document.getElementById('mfid').value
+    let stf= school.staff.find( staf => staf.mfid == sid);
+        if (stf= school.staff.find( staf => staf.mfid == sid)){
+           
+    stf[skeys]=srepl; 
+    console.log(stf)
+    //return(stu) 
+    
+      }
+   }
+function deleteSfAct(){
+    let sid=document.getElementById('dfid').value
+    let woos = school.staff;
+    let stf= school.staff.find( staf => staf.dfid == sid);
+        if (stf= school.staff.find( staf => staf.dfid == sid)){           
+       let index= woos.indexOf(stf);
+       woos.splice(index,1)
+       console.log(school)
+    }    
+}
+
+
+
+
+
+
+//SCHOOL DASH BOARD
+function schoolInfo(){
+    console.log(school)
+}
 function schoolBalance(){      
     for (i=0; i< student.length; i++){
         schoolIncome += parseInt(student[i].fees)

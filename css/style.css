@@ -97,7 +97,7 @@ pre{
     height: 50px;
     padding: 10px 20px;
     padding-bottom: 30px;
-    marging-bottom: 10px; 
+    margin-bottom: 10px; 
     gap: 40%;
     display: flex;
     justify-content: space-between;
@@ -118,6 +118,13 @@ pre{
     padding: 3%;
     font-size: 20px;    
 }
+.sdata *:first-child{
+    grid-column: 1 / span 2;
+    grid-row: 1 /span 2;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
 .getInf{
     background: rgba(0, 0, 0, 0.356);
     color: #f4f4f4;
@@ -125,4 +132,5 @@ pre{
     margin-right: 3%;
     border-radius: 10px;
     line-height: 2;
+    margin-bottom: 5%;
 }
