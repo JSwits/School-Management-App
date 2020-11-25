@@ -104,3 +104,28 @@ findStudent = () => {
 
 
 }
+
+//function for finding student
+
+findStudent = () => {
+    let stdId = document.querySelector('.stdId').value;
+    let moreInfo = document.querySelector('.moreInfo');
+
+    let stdFind = school.students.find(el => el.sdid === stdId);
+
+    console.log(stdFind);
+
+    let displayStudent = Object.values(stdFind);
+    moreInfo.innerHTML = displayStudent;
+}
+
+// removing student
+removeStudent = () => {
+let stdId = document.querySelector('.stdId').value;
+
+    for (let i = school.students.length - 1; i >= 0; i--) {
+        if (school.students[i] === stdId) {
+        school.students.splice(i, 1);
+        }
+    }
+}
