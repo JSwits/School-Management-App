@@ -51,7 +51,7 @@ input, select{
     text-align: center;
     
 }
-.buttn, .sfbutton, .sfbutton-reset{
+.buttn, .sfbutton, .button-reset{
     background-color: var(--dark-color);
     width: auto;
     color: var(--light-color);
@@ -64,7 +64,7 @@ input, select{
     box-shadow: none;
 }
 
-.sfbutton-reset{
+.button-reset{
     background-color: rgb(87, 58, 58);
 }
 
@@ -121,7 +121,7 @@ input, select{
     padding: 3%;
     font-size: 20px;    
 }
-.getInf{
+.getInf, .moreInfo{
     background: rgba(0, 0, 0, 0.356);
     color: #f4f4f4;
     padding:  3%;

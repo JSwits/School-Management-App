@@ -31,8 +31,8 @@
         <div class="getInf">
             <h3>Get Student information</h3>
             <Label for="Sdid">Enter ID</Label>
-            <input type="text" name="Sdid" placeholder="Enter Student ID">
-            <input type="button" class="buttn" value="Get Info">
+            <input type="text" name="Sdid" class="stdId" placeholder="Enter Student ID">
+            <input type="button" class="buttn" value="Get Info" onclick="findStudent()">
             <div id="registerS">
                 <h3>Register New Student</h3>            
                <form>
@@ -56,11 +56,12 @@
                     </select></br>
 
                     <input type="button" class="buttn" value="Create Student Account" onclick="registerStudent()">
+                    <input type="reset" class="button-reset" value="Reset">
                </form>
             </div>
             <p id="studentID"></p>
         </div>
-        <div class="getInf">some other text</div>
+        <div class="moreInfo">some other text</div>
     </div>
 
 

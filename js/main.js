@@ -52,6 +52,18 @@ function registerStudent(){
     console.log(school)
     console.log(students)
     console.log(feesp)
+
+    //local storage starts here
+    
+    // Put the student array into local storage
+   localStorage.setItem('school', JSON.stringify(school));
+
+   // Retrieve the array from storage
+   var retrievedSchool = localStorage.getItem('school');
+
+   console.log('retrievedSchool: ', JSON.parse(retrievedSchool));
+
+
 }
 console.log(school)
 
@@ -74,4 +86,21 @@ function staffId(){
     for (var i=0; i<9; i++){
         id+=letters[Math.floor(Math.random()*16)];
     } return id;
+}
+
+
+//function for finding student
+
+findStudent = () => {
+    let stdId = document.querySelector('.stdId').value;
+    let moreInfo = document.querySelector('.moreInfo');
+
+    let stdFind = school.students.find(el => el.sdid === stdId);
+
+    console.log(stdFind);
+
+    let displayStudent = Object.values(stdFind);
+    moreInfo.innerHTML = displayStudent;
+
+
 }

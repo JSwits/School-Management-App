@@ -4,8 +4,6 @@ let sfbutton = document.querySelector('.sfbutton');
 
 sfbutton.onclick = function EmployStaff () {
 
-    EmployStaff.preventDefault;
-
 let sffname = document.querySelector('.sffname').value;
 let sflname = document.querySelector('.sflname').value;
 let sfoname = document.querySelector('.sfoname').value;
@@ -40,7 +38,13 @@ let sfpaid = document.getElementById('sfpaid').value;
 
     console.log('retrievedArray: ', JSON.parse(retrievedArray));
 
-
+    /*
+    function reason(){
+        var dropd = document.getElementById("savedrop").value;
+        var drophistory = JSON.parse(localStorage.getItem("savedrop"));
+        localStorage.setItem("reason", JSON.stringify(dropd));
+    }
+    */
 }
 
 
