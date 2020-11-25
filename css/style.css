@@ -41,15 +41,17 @@ input::placeholder {
     font-size: 16px;
     font-style: italic;
     padding: 5%;
+    text-align: center;
  }
 input, select{
-    padding:2% 5%;
-    width: 50%;
+    padding:2% 4%;
+    width: 45%;
     color: black;
     border-radius: 5px;
-    margin: 1% 2%;
-    text-align: center;
-    
+    margin: 1% 0%;  
+}
+pre{
+    display: inline;
 }
 .buttn{
     background-color: var(--dark-color);
@@ -95,7 +97,7 @@ input, select{
     height: 50px;
     padding: 10px 20px;
     padding-bottom: 30px;
-    marging-bottom: 10px; 
+    margin-bottom: 10px; 
     gap: 40%;
     display: flex;
     justify-content: space-between;
@@ -116,6 +118,13 @@ input, select{
     padding: 3%;
     font-size: 20px;    
 }
+.sdata *:first-child{
+    grid-column: 1 / span 2;
+    grid-row: 1 /span 2;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
 .getInf{
     background: rgba(0, 0, 0, 0.356);
     color: #f4f4f4;
@@ -123,4 +132,5 @@ input, select{
     margin-right: 3%;
     border-radius: 10px;
     line-height: 2;
+    margin-bottom: 5%;
 }

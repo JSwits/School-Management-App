@@ -29,7 +29,17 @@
     <!--Polling school data-->
     <div class="sdata">
         <div class="getInf">
+            <!--school poll-->
+            <h3>Get School Information</h3>
+            <input type="button" class="buttn" value="Get School Information" onclick="#">
+            <input type="button" class="buttn" value="School balance" onclick="schoolBalance()">
+        
+        </div>
+
+        <!--Student Data-->
+        <div class="getInf">
             <h3>Get Student information</h3>
+<<<<<<< HEAD
             <Label for="Sdid">Enter ID</Label>
             <input type="text" name="Sdid" placeholder="Enter Student ID">
             <input type="button" class="buttn" value="Get Info">
@@ -54,13 +64,148 @@
                         <option value="yes">Yes</option>
                         <option value="No">No</option>
                     </select></br>
+=======
+            <LAbel for="Sdid">Enter ID</LAbel>
+            <input type="text" name="Sdid" id="sdid" onfocus="" placeholder="Enter Student ID">
+            <input type="button" class="buttn" value="Get Info"  onclick="getSdInfo()">
+            <hr>
+            <!--Register New student-->
+            <div id="registerS">
+                <h3>Register New Student</h3>            
+                <label for="fname"><pre>Name        </pre></label>
+                <input type="text" name="fname" id="sdname" onfocus=""placeholder="Start with First-Name"></br>
+                <label for="gender"><pre>Gender      </pre></label>
+                <select name="gender" id="sdgender">                
+                    <option value="#">-------------select-----------</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select></br>              
+                <label for="sdage"><pre>DOB         </pre></label>
+                <input type="date" name="sdage" id="sdage" placeholder="MM/DD/YYYY"></br>                
+                <label for="address"><pre>Address     </pre></label>
+                <input type="text" name="address" onfocus="" id="sdaddress" ></br>
+                <label for="pnumber">Phone Number</label>
+                <input type="number" name="pnumber" onfocus="" id="sdphone"></br>
+                <label for="fees"><pre>Tuition Fee </pre></label>
+                <input type="number" name="fee" onfocus="" id="tuitionfee"></br>
+                <label for="tpaid"><pre>Tuition Paid</pre></label>
+                <select name="tpaid" id="tpaid">                
+                    <option value="#">---select--</option>
+                    <option value="yes">Yes</option>
+                    <option value="No">No</option>
+                </select></br>
+>>>>>>> a704c88f730522b9ba0c548f1dba348f461a7706
 
                     <input type="button" class="buttn" value="Create Student Account" onclick="registerStudent()">
                </form>
             </div>
             <p id="studentID"></p>
+<<<<<<< HEAD
         </div>
         <div class="getInf">some other text</div>
+=======
+            <hr>
+             <!--Modify student info-->
+        <div class="modsd">
+            <h3>Modify Student Infomation</h3>
+            <LAbel for="Sdid">Enter ID</LAbel>
+            <input type="text" name="Sdid" id="mdid" onfocus="" placeholder="Enter Student ID"></br>
+            <LAbel for="mdid">Field to modify</LAbel>
+            <!--<input type="text" name="mdid" id="key" placeholder="name/gender/age/phone/address/fees"></br>-->
+            <select name="mdid" id="key" >
+                <option value="#">----Select--</option>
+                <option value="name">Name</option>
+                <option value="gender">Gender</option>
+                <option value="age">Age</option>
+                <option value="phone">Phone Number</option>
+                <option value="address">Address</option>
+            </select></br>
+            <label for="replace">Replace with</label>
+            <input type="text" name="replace" id="replace"></br>
+            <input type="button" class="buttn" value="Modify Student Information" onclick="modifySdInfo()">
+            
+            
+        </div>
+        <hr>
+        <div class="modsd">
+            <h3>Delete Student Account</h3>
+            <LAbel for="ddid">Enter ID</LAbel>
+            <input type="text" name="ddid" id="ddid" onfocus="" placeholder="Enter Student ID"></br>
+            <input type="button" class="buttn" value="Delete Student Account" onclick="deleteSdAct()">           
+        </div>
+       
+
+        </div>
+       
+
+        <div class="getInf">
+            <h3>Get Staff Information</h3>
+            <LAbel for="Stfid">Enter ID</LAbel>
+            <input type="text" name="Stfid" id="sfid" onfocus="" placeholder="Enter Staff ID">
+            <input type="button" class="buttn" value="Get Info"  onclick="getSfInfo()">
+            <hr>
+            <!--Register New Staff-->
+            <div id="registerS">
+                <h3>Register New Staff</h3>            
+                <label for="fname"><pre>Name        </pre></label>
+                <input type="text" name="fname" id="sfname" onfocus=""placeholder="Start with First-Name"></br>
+                <label for="gender"><pre>Gender      </pre></label>
+                <select name="gender" id="sfgender">                
+                    <option value="#">-------------select-----------</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select></br>              
+                <label for="sfage"><pre>DOB         </pre></label>
+                <input type="date" name="sfage" id="sfage" placeholder="MM/DD/YYYY"></br>                
+                <label for="address"><pre>Address     </pre></label>
+                <input type="text" name="address" onfocus="" id="sfaddress" ></br>
+                <label for="spnumber">Phone Number</label>
+                <input type="number" name="spnumber" onfocus="" id="sfphone"></br>
+                <label for="sal"><pre>Salary      </pre></label>
+                <input type="number" name="sal" onfocus="" id="sal"></br>
+                <label for="salpaid"><pre>Salary Paid </pre></label>
+                <select name="salpaid" id="salpaid">                
+                    <option value="#">---select--</option>
+                    <option value="yes">Yes</option>
+                    <option value="No">No</option>
+                </select></br>
+
+                <input type="button" class="buttn" value="Create Staff Account" onclick="registerSNew()">
+            </div>
+            <p id="staffID"></p>
+            <hr>
+             <!--Modify student info-->
+        <div class="modsd">
+            <h3>Modify Staff Infomation</h3>
+            <LAbel for="Sfid">Enter ID</LAbel>
+            <input type="text" name="Sfid" id="mfid" onfocus="" placeholder="Enter Staff ID"></br>
+            <LAbel for="mfid">Field to modify</LAbel>            
+            <select name="mfid" id="skey" >
+                <option value="#">----Select--</option>
+                <option value="name">Name</option>
+                <option value="gender">gender</option>
+                <option value="age">age</option>
+                <option value="phone">Phone Number</option>
+                <option value="address">Address</option>
+            </select></br>
+            <label for="sreplace">Replace with</label>
+            <input type="text" name="sreplace" id="sreplace"></br>
+            <input type="button" class="buttn" value="Modify Staff Information" onclick="modifySfInfo">          
+            
+        </div>
+        <hr>
+        <div class="modsd">
+            <h3>Delete Staff Account</h3>
+            <LAbel for="dfid">Enter ID</LAbel>
+            <input type="text" name="dfid" id="dfid" onfocus="" placeholder="Enter Staff ID"></br>
+            <input type="button" class="buttn" value="Delete Staff Account" onclick="deleteSfAct()">           
+        </div>
+          
+
+
+
+        </div>
+>>>>>>> a704c88f730522b9ba0c548f1dba348f461a7706
     </div>
 
 
