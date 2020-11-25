@@ -1,8 +1,9 @@
+//main student and school array
 let school = {
     students: [],
     Staff: []
     };
-
+//student array
 let students = [
     {
         sdid: this.sdid,
@@ -15,7 +16,7 @@ let students = [
         feesp: this.feesp
     }
 ]
-
+//staff array
 let staff = [
     {
         name: this.name,
@@ -28,6 +29,7 @@ let staff = [
     }
 ]
 
+//html DOM Value
 fees=document.getElementById('tuitionfee').value
 //register new student
 function registerStudent(){
@@ -64,14 +66,27 @@ function payfees(n){
 function studentID(){
     var letters = "0123456789ABCDEF";
     var id = "SF"
-    for (var i=0; i<9; i++){
+    for (var i=0; i<15; i++){
         id+=letters[Math.floor(Math.random()*16)];
     } return id;
 }
 function staffId(){
     var letters = "0123456789GHIJKL";
     var id = "SF"
-    for (var i=0; i<9; i++){
+    for (var i=0; i<15; i++){
         id+=letters[Math.floor(Math.random()*16)];
     } return id;
+}
+//deleting a student from database
+function deleteStudent() {
+    
+}
+
+//search function for both students and staff
+function searchById() {
+    
+}
+
+function searchByName() {
+    
 }
