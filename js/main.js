@@ -7,6 +7,8 @@ const staf=school.staff
 let schoolIncome = 0;
 let schoolExpenditure = 0;
 let schoolBalnce = 0;
+let totalStudent= 1;
+let totalStaff=1;
 fees=document.getElementById('tuitionfee').value
 //register new student
 
@@ -33,19 +35,26 @@ function registerNew(){
 }
 
 function studentID(){
-    var letters = "0123456789ABCDEF";
-    var id = "SD"
-    for (var i=0; i<9; i++){
-        id+=letters[Math.floor(Math.random()*16)];
-    } return id;
+    let id="ST20";
+    let num = String(totalStudent);
+    while (num.length < 4) {
+      num = "0" + num;
+    }
+    let idnum= id + num
+    totalStudent++
+    return (idnum)
 }
 
 function staffId(){
-    var letters = "0123456789GHIJKL";
-    var id = "SF"
-    for (var i=0; i<9; i++){
-        id+=letters[Math.floor(Math.random()*16)];
-    } return id;
+    let id="SF20";
+    let num = String(totalStaff);
+    while (num.length < 4) {
+        num = "0" + num;
+    }
+    let idnum= id + num
+    totalStaff++
+    return (idnum)
+         
 }
 //get student information
 function getSdInfo(){
