@@ -28,23 +28,156 @@
     </div>
     <!--Polling school data-->
     <div class="sdata">
-        <div class="getInf">
-            <h3>Get staff or student information</h3>
-            <label for="getInfo">Choose category</label>
-            <select name="getInfo" id="">                
-                <option value="#">---select--</option>
-                <option value="1">student</option>
-                <option value="2">staff</option>
-            </select></br>
-            <LAbel for="Rid">Enter ID</LAbel>
-            <input type="text" name="Rid" placeholder="Enter destination ID">
-            <input type="button" class="buttn" value="Get Info">
-
+        <div class="sdata">
+            <div class="getInf">
+                <!--school poll-->
+                <h3>Get School Information</h3>
+                <input type="button" class="buttn" value="Get School Information" onclick="schoolInfo()">
+                <input type="button" class="buttn" value="School balance" onclick="schoolBalance()">
+            
+            </div>
+    
+            <!--Student Data-->
+            <div class="getInf">
+                <h3>Get Student information</h3>
+                <LAbel for="Sdid">Enter ID</LAbel>
+                <input type="text" name="Sdid" id="sdid"  placeholder="Enter Student ID">
+                <input type="button" class="buttn" value="Get Info"  onclick="getSdInfo()">
+                <hr>
+                <!--Register New student-->
+                <div id="registerS">
+                    <h3>Register New Student</h3>            
+                    <label for="fname"><pre>Name        </pre></label>
+                    <input type="text" name="fname" id="sdname"  placeholder="Start with First-Name"></br>
+                    <label for="gender"><pre>Gender      </pre></label>
+                    <select name="gender" id="sdgender">                
+                        <option value="#">-------------select-----------</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select></br>              
+                    <label for="sdage"><pre>DOB         </pre></label>
+                    <input type="date" name="sdage" id="sdage"  placeholder="MM/DD/YYYY"></br>                
+                    <label for="address"><pre>Address     </pre></label>
+                    <input type="text" name="address"   id="sdaddress" ></br>
+                    <label for="pnumber">Phone Number</label>
+                    <input type="number" name="pnumber"   id="sdphone" maxlength="11"></br>
+                    <label for="fees"><pre>Tuition Fee </pre></label>
+                    <input type="number" name="fee"   id="tuitionfee"></br>
+                    <label for="tpaid"><pre>Tuition Paid</pre></label>
+                    <select name="tpaid" id="tpaid" >                
+                        <option value="#">---select--</option>
+                        <option value="yes">Yes</option>
+                        <option value="No">No</option>
+                    </select></br>
+    
+                    <input type="button" class="buttn" value="Create Student Account" onclick="registerNew()">
+                </div>
+                <div id="studentID"><ul></ul></div>
+                <hr>
+                 <!--Modify student info-->
+            <div class="modsd">
+                <h3>Modify Student Infomation</h3>
+                <Label for="Sdid">Enter ID</Label>
+                <input type="text" name="Sdid" id="mdid"   placeholder="Enter Student ID"></br>
+                <LAbel for="mdid">Field to modify</LAbel>
+                <!--<input type="text" name="mdid" id="key" placeholder="name/gender/age/phone/address/fees"></br>-->
+                <select name="mdid" id="key" >
+                    <option value="#">----Select--</option>
+                    <option value="name">Name</option>
+                    <option value="gender">Gender</option>
+                    <option value="age">Age</option>
+                    <option value="phone">Phone Number</option>
+                    <option value="address">Address</option>
+                </select></br>
+                <label for="replace">Replace with</label>
+                <input type="text" name="replace" id="replace"></br>
+                <input type="button" class="buttn" value="Modify Student Information" onclick="modifySdInfo()">
+                
+                
+            </div>
+            <hr>
+            <div class="modsd">
+                <h3>Delete Student Account</h3>
+                <Label for="ddid">Enter ID</Label>
+                <input type="text" name="ddid" id="ddid"   placeholder="Enter Student ID"></br>
+                <input type="button" class="buttn" value="Delete Student Account" onclick="deleteSdAct()">           
+            </div>
+           
+    
+            </div>
+           
+    
+            <div class="getInf">
+                <h3>Get Staff Information</h3>
+                <LAbel for="Stfid">Enter ID</LAbel>
+                <input type="text" name="Stfid" id="sfid" placeholder="Enter Staff ID">
+                <input type="button" class="buttn" value="Get Info"  onclick="getSfInfo()">
+                <hr>
+                <!--Register New Staff-->
+                <div id="registerS">
+                    <h3>Register New Staff</h3>            
+                    <label for="fname"><pre>Name        </pre></label>
+                    <input type="text" name="fname" id="sfname" placeholder="Start with First-Name"></br>
+                    <label for="gender"><pre>Gender      </pre></label>
+                    <select name="gender" id="sfgender">                
+                        <option value="#">-------------select-----------</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select></br>              
+                    <label for="sfage"><pre>DOB         </pre></label>
+                    <input type="date" name="sfage" id="sfage"  placeholder="MM/DD/YYYY"></br>                
+                    <label for="address"><pre>Address     </pre></label>
+                    <input type="text" name="address" id="sfaddress" ></br>
+                    <label for="spnumber">Phone Number</label>
+                    <input type="number" name="spnumber"  id="sfphone" maxlength="11"></br>
+                    <label for="sal"><pre>Salary      </pre></label>
+                    <input type="number" name="sal"   id="sal"></br>
+                    <label for="salpaid"><pre>Salary Paid </pre></label>
+                    <select name="salpaid" id="salpaid" >                
+                        <option value="#">---select--</option>
+                        <option value="yes">Yes</option>
+                        <option value="No">No</option>
+                    </select></br>
+    
+                    <input type="button" class="buttn" value="Create Staff Account" onclick="registerSNew()">
+                </div>
+                <p id="staffID"></p>
+                <hr>
+                 <!--Modify staff info-->
+            <div class="modsd">
+                <h3>Modify Staff Infomation</h3>
+                <Label for="mdfid">Enter ID</Label>
+                <input type="text" name="mdfid" id="mfid"  placeholder="Enter Staff ID"></br>
+                <Label for="mfid">Field to modify</Label>            
+                <select name="mfid" id="skey" >
+                    <option value="#">----Select--</option>
+                    <option value="name">Name</option>
+                    <option value="gender">gender</option>
+                    <option value="dob">Date of birth (mm-dd-yyyy)</option>
+                    <option value="phone">Phone Number</option>
+                    <option value="address">Address</option>
+                </select></br>
+                <label for="sreplace">Replace with</label>
+                <input type="text" name="sreplace" id="sreplace"></br>
+                <input type="button" class="buttn" value="Modify Staff Information" onclick="modifySfInfo()">       
+             
+                
+            </div>
+            <hr>
+            <div class="modsd">
+                <h3>Delete Staff Account</h3>
+                <Label for="delfid">Enter ID</Label>
+                <input type="text" name="delfid" id="dfid"  placeholder="Enter Staff ID"></br>
+                <input type="button" class="buttn" value="Delete Staff Account" onclick="deleteSfAct()">           
+            </div>
+              
+    
+    
+    
+            </div>
         </div>
-        <div>some other text</div>
-    </div>
-
-
-
+    
+    
+    <script src="js/main.js"></script>
 </body>
 </html>
